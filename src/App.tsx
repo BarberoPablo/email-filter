@@ -23,10 +23,7 @@ function App() {
         );
       } else {
         if (arrayEmail[2] !== "Microsoft	") {
-          console.log("2", arrayEmail[2]);
-          console.log("6", arrayEmail[6].split("Gift Code: ")[1]);
-          const word = arrayEmail[6].split("Gift Code: ")[1];
-          filteredEmails.set(arrayEmail[2], arrayEmail[6]);
+          filteredEmails.set(arrayEmail[2], arrayEmail[6].split("Gift Code: ")[1]);
         }
       }
     });
@@ -47,11 +44,12 @@ function App() {
 
   const rows = Object.entries(response).map(([key, value]: any) => {
     const parsedValue = value.split("\n");
-    //console.log("VALUE", value.split("\n"));
     return (
       <tr key={key}>
-        <td>{key ? key : "NO SE ENCONTRÓ EL NOMBRE"}</td>
-        <td>{parsedValue.length > 0 && parsedValue.map((code) => <tr>{code}</tr>)}</td>
+        <td style={{}}>
+          <h2>{key ? key : "NO SE ENCONTRÓ EL NOMBRE"}</h2>
+        </td>
+        <td>{parsedValue.length > 0 && parsedValue.map((code: string) => <div>{code}</div>)}</td>
       </tr>
     );
   });
