@@ -16,22 +16,24 @@ function App() {
 
     rawEmails.forEach((email) => {
       const arrayEmail = email.split("\n");
-      console.log("ARRAY", arrayEmail);
+      //console.log("ARRAY", arrayEmail);
 
       if (filteredEmails.get(arrayEmail[2])) {
+        const code = arrayEmail[6] == "Redeem Code" ? arrayEmail[4] : arrayEmail[6];
+        console.log("code", code);
         filteredEmails.set(
           arrayEmail[2],
-          filteredEmails.get(arrayEmail[2]) + "\n" + arrayEmail[6].split("Gift Code: ")[1]
+          filteredEmails.get(arrayEmail[2]) + "\n" + code.split("Gift Code: ")[1]
         );
-        console.log("Prueba1", filteredEmails.get(arrayEmail[2]));
+        //console.log("Prueba1", filteredEmails.get(arrayEmail[2]));
       } else {
         if (arrayEmail[2] !== "Microsoft	") {
-          console.log("supuesta key", arrayEmail[2]);
-          console.log("que es esto?", arrayEmail);
+          //console.log("supuesta key", arrayEmail[2]);
+          //console.log("que es esto?", arrayEmail);
           const code = arrayEmail[6] == "Redeem Code" ? arrayEmail[4] : arrayEmail[6];
           filteredEmails.set(arrayEmail[2], code.split("Gift Code: ")[1]);
         }
-        console.log("Prueba2", filteredEmails.get(arrayEmail[2]));
+        //console.log("Prueba2", filteredEmails.get(arrayEmail[2]));
       }
     });
 
