@@ -11,20 +11,27 @@ function App() {
 
   function convertText(e: any) {
     const rawEmails = rawText.split("Quantity");
+
     const filteredEmails = new Map<string, string>();
 
     rawEmails.forEach((email) => {
       const arrayEmail = email.split("\n");
+      console.log("ARRAY", arrayEmail);
 
       if (filteredEmails.get(arrayEmail[2])) {
         filteredEmails.set(
           arrayEmail[2],
           filteredEmails.get(arrayEmail[2]) + "\n" + arrayEmail[6].split("Gift Code: ")[1]
         );
+        console.log("Prueba1", filteredEmails.get(arrayEmail[2]));
       } else {
         if (arrayEmail[2] !== "Microsoft	") {
-          filteredEmails.set(arrayEmail[2], arrayEmail[6].split("Gift Code: ")[1]);
+          console.log("supuesta key", arrayEmail[2]);
+          console.log("que es esto?", arrayEmail);
+          const code = arrayEmail[6] == "Redeem Code" ? arrayEmail[4] : arrayEmail[6];
+          filteredEmails.set(arrayEmail[2], code.split("Gift Code: ")[1]);
         }
+        console.log("Prueba2", filteredEmails.get(arrayEmail[2]));
       }
     });
 
@@ -43,11 +50,14 @@ function App() {
   }
 
   const rows = Object.entries(response).map(([key, value]: any) => {
+    /* console.log("VALUE", value);
+    console.log("key", key); */
+
     const parsedValue = value.split("\n");
     return (
       <tr key={key}>
         <td style={{}}>
-          <h2>{key ? key : "NO SE ENCONTRÓ EL NOMBRE"}</h2>
+          <h2>{key ? `${key} (${parsedValue.length} keys)` : "NO SE ENCONTRÓ EL NOMBRE"}</h2>
         </td>
         <td>{parsedValue.length > 0 && parsedValue.map((code: string) => <div>{code}</div>)}</td>
       </tr>
