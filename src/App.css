@@ -1,10 +1,35 @@
-table,
-th,
-td {
-  border: 1px solid black;
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.button:active {
+  background-color: #3e8e41;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  background-image: url("https://cdna.artstation.com/p/assets/images/images/024/538/828/original/pixel-jeff-clipc-s.gif?1582740521");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+table {
+  background-color: rgba(241, 241, 241, 0.8);
+}
+
+textarea {
+  background-color: rgba(241, 241, 241, 0.8);
 }
