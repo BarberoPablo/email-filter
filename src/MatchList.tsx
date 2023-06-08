@@ -144,7 +144,7 @@ export default function MatchList() {
           <tbody>    
             {listMatches.length > 0 && listMatches.map(match => {
               return (
-                <tr>
+                <tr style={{color: "black"}}>
                   <td>
                     {match.id}
                   </td>
