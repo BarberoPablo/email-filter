@@ -130,8 +130,8 @@ export default function MatchList() {
         <table style={{ width: "100%", border: "1px solid black" }}>
         { listMatches.length > 0 && 
           <caption>
-            <h3>Cantida de coincidencias: {listMatches.length}</h3>
-            <h3>Total $: {total}</h3>
+            <h3 style={{color:"white"}} >Cantida de coincidencias: {listMatches.length}</h3>
+            <h3 style={{color:"white"}}>Total $: {total}</h3>
           </caption>
         }
           <thead>

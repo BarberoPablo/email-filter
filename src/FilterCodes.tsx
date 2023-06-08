@@ -84,7 +84,7 @@ export default function FilterCodes() {
         </table>
       </div>
 
-      {keysSize > 0 && <h1>La cantidad total de Keys es de: {keysSize}</h1>}
+      {keysSize > 0 && <h1 style={{color:"white"}}>La cantidad total de Keys es de: {keysSize}</h1>}
     </div>
   );
 }
