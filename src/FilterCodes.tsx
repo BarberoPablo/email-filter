@@ -65,7 +65,7 @@ export default function FilterCodes() {
     <div className="App">
       <div>
         <textarea
-          style={{ width: "1000px", height: "500px", marginTop: "50px" }}
+          style={{ width: "1000px", height: "500px", marginTop: "50px", color: "black" }}
           value={rawText}
           placeholder="Emails"
           onChange={handleTextChange}

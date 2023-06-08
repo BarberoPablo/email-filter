@@ -110,13 +110,13 @@ export default function MatchList() {
     <div className="App" style={{width: "100%"}}>
       <div style={{display: "flex", justifyContent: "space-around", width: "100%"}}>
         <textarea
-          style={{ width: "500px", height: "500px", marginTop: "50px" }}
+          style={{ width: "500px", height: "500px", marginTop: "50px", color: "black" }}
           value={myListString}
           placeholder="Mis ventas"
           onChange={handleMyListChange}
         />
         <textarea
-          style={{ width: "500px", height: "500px", marginTop: "50px" }}
+          style={{ width: "500px", height: "500px", marginTop: "50px", color: "black" }}
           value={mixString}
           placeholder="Ventas mezcladas"
           onChange={handleMixChange}
